@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Mercer | Cloud & DevOps Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #38bdf8;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Header Style */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .header-left h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header-left h2 {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
+
+        .contact-info {
+            list-style: none;
+            text-align: right;
+        }
+
+        .contact-info li {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+        }
+
+        .contact-info li i {
+            color: var(--accent-color);
+            margin-right: 8px;
+            width: 16px;
+        }
+
+        .contact-info a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Section layout */
+        .section-title {
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-color);
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+        }
+
+        .summary {
+            margin-bottom: 2.5rem;
+            font-size: 1.05rem;
+            color: #cbd5e1;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .skill-category h4 {
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-color);
+            padding: 0.3rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        /* Experience & Projects Timelines */
+        .timeline-item {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .role-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .role-title span {
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+
+        .duration {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            background: var(--bg-color);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+        }
+
+        .timeline-body ul {
+            padding-left: 1.2rem;
+            color: #cbd5e1;
+        }
+
+        .timeline-body li {
+            margin-bottom: 0.4rem;
+            font-size: 0.95rem;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        /* Responsive Fixes */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            .contact-info {
+                text-align: left;
+            }
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                padding: 1.5rem;
+            }
+            .timeline-header {
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <header>
+        <div class="header-left">
+            <h1>Alex Mercer</h1>
+            <h2>Cloud & DevOps Engineer</h2>
+        </div>
+        <ul class="contact-info">
+            <li><i class="fa-solid fa-envelope"></i><a href="mailto:alex.mercer@email.com">alex.mercer@email.com</a></li>
+            <li><i class="fa-solid fa-phone"></i>+1 (555) 019-2834</li>
+            <li><i class="fa-solid fa-location-dot"></i>Austin, TX (Open to Remote)</li>
+            <li><i class="fa-brands fa-linkedin"></i><a href="#">linkedin.com/in/alex-mercer</a></li>
+            <li><i class="fa-brands fa-github"></i><a href="#">github.com/alex-mercer</a></li>
+        </ul>
+    </header>
+
+    <!-- Professional Summary -->
+    <section>
+        <h3 class="section-title"><i class="fa-solid fa-user"></i> Profile</h3>
+        <p class="summary">
+            Dynamic Cloud & DevOps Engineer with 3 years of hands-on experience designing, automating, and optimizing mission-critical deployments. Proven track record in orchestrating containerized applications, implementing robust CI/CD pipelines, and driving infrastructure-as-code initiatives to accelerate delivery velocity and maximize cloud cost efficiencies.
+        </p>
+    </section>
+
+    <!-- Core Skills -->
+    <section>
+        <h3 class="section-title"><i class="fa-solid fa-gear"></i> Technical Skills</h3>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h4>Cloud Platforms</h4>
+                <div class="skill-tags">
+                    <span class="tag">AWS</span>
+                    <span class="tag">Azure</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h4>Containers & Orchestration</h4>
+                <div class="skill-tags">
+                    <span class="tag">Docker</span>
+                    <span class="tag">Kubernetes</span>
+                    <span class="tag">Helm</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h4>Infrastructure as Code</h4>
+                <div class="skill-tags">
+                    <span class="tag">Terraform</span>
+                    <span class="tag">CloudFormation</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h4>CI/CD & Automation</h4>
+                <div class="skill-tags">
+                    <span class="tag">GitHub Actions</span>
+                    <span class="tag">Jenkins</span>
+                    <span class="tag">Linux / Bash</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience -->
+    <section>
+        <h3 class="section-title"><i class="fa-solid fa-briefcase"></i> Experience</h3>
+        
+        <div class="timeline-item">
+            <div class="timeline-header">
+                <div class="role-title">DevOps Engineer <span>@ CloudScale Solutions</span></div>
+                <span class="duration">2024 - Present</span>
+            </div>
+            <div class="timeline-body">
+                <ul>
+                    <li>Designed and maintained production-grade EKS (Kubernetes) clusters, reducing deployment downtime to zero using rolling updates.</li>
+                    <li>Provisioned scalable AWS infrastructure utilizing <strong>Terraform</strong>, reducing resource provisioning time by 60%.</li>
+                    <li>Constructed end-to-end GitHub Actions pipelines that automated build, test, and container scanning (Trivy) phases for 15+ microservices.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-header">
+                <div class="role-title">Associate Cloud Engineer <span>@ TechNexus Labs</span></div>
+                <span class="duration">2023 - 2024</span>
+            </div>
+            <div class="timeline-body">
+                <ul>
+                    <li>Migrated legacy monolithic applications to AWS ECS, optimizing container image sizes by 40%.</li>
+                    <li>Implemented centralized log aggregation and infrastructure monitoring setups utilizing <strong>Prometheus and Grafana</strong>.</li>
+                    <li>Managed IAM policies and AWS Organizations to enforce the principle of least privilege across development environments.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Two Column layout for Certifications and Education -->
+    <div class="two-column">
+        <!-- Certifications -->
+        <section>
+            <h3 class="section-title"><i class="fa-solid fa-certificate"></i> Certifications</h3>
+            <div class="timeline-item" style="margin-bottom: 1rem;">
+                <div class="role-title" style="font-size: 1rem;">AWS Certified Solutions Architect – Associate</div>
+                <div class="duration" style="display:inline-block; margin-top: 0.3rem; font-size: 0.8rem;">Issued 2025</div>
+            </div>
+            <div class="timeline-item">
+                <div class="role-title" style="font-size: 1rem;">Certified Kubernetes Administrator (CKA)</div>
+                <div class="duration" style="display:inline-block; margin-top: 0.3rem; font-size: 0.8rem;">Issued 2024</div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section>
+            <h3 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+            <div class="timeline-item">
+                <div class="role-title" style="font-size: 1rem;">B.S. in Computer Science</div>
+                <div style="color: var(--text-muted); font-size: 0.95rem;">University of Texas</div>
+                <span class="duration" style="display:inline-block; margin-top: 0.3rem; font-size: 0.8rem;">Graduated 2023</span>
+            </div>
+        </section>
+    </div>
+</div>
+
+</body>
+</html>
