@@ -1,16 +1,11 @@
-name: Test Workflow
+name: my first pipeline
 
 on:
-  push:
-    branches: [ main ]
+  push:branch "main"
+    
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Run simple command
-        run: echo "Hello from GitHub Actions"
+build:
+  runs-on: ubuntu-latest #macos, windows-latest
+  steps:
+    name:clone the code
