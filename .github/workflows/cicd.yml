@@ -19,4 +19,4 @@ build:
       username: hezbonnduko2026
       password: ${{secrets.DOCKER_PASS}}
         name: push image
-        run: docker push hezbonnduko2026/cicd-portfolio
+        docker push hezbonnduko2026/cicd-portfolio
