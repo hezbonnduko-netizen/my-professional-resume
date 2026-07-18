@@ -1,22 +1,26 @@
-name: my first pipeline
+name: My First Pipeline
 
 on:
-  push:branch "main"
-    
+  push:
+    branches:
+      - main
 
 jobs:
-build:
-  runs-on: ubuntu-latest #macos, windows-latest
-  steps:
-    name:clone the code
-    uses: actions/checkout@v4
-    name :build image
-    run
-    docker build -t hezbonnduko2026/cicd-portfolio
-    name :Docker login
-    uses: docker /login-action@v3
-    with: 
-      username: hezbonnduko2026
-      password: ${{secrets.DOCKER_PASS}}
-        name: push image
-        docker push hezbonnduko2026/cicd-portfolio
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone the code
+        uses: actions/checkout@v4
+
+      - name: Build image
+        run: docker build -t hezbonnduko2026/cicd-portfolio .
+
+      - name: Docker login
+        uses: docker/login-action@v3
+        with:
+          username: hezbonnduko2026
+          password: ${{ secrets.DOCKER_PASS }}
+
+      - name: Push image
+        run: docker push hezbonnduko2026/cicd-portfolio
